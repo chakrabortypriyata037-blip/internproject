@@ -25,7 +25,7 @@ const STORAGE_MODE = (process.env.STORAGE_MODE || "auto").trim().toLowerCase();
 
 const isS3Configured =
   STORAGE_MODE !== "local" &&
-  Boolean(RAW_BUCKET && RAW_BUCKET !== "replace-with-your-unique-bucket-name" && !RAW_BUCKET.includes("yourname"));
+  Boolean(RAW_BUCKET && RAW_BUCKET !== "replace-with-your-unique-bucket-name");
 
 const BUCKET = isS3Configured ? RAW_BUCKET : "";
 
